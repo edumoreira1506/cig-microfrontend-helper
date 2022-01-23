@@ -1,5 +1,5 @@
 {
-	"name": "@cig-platform/microfronend-helper",
+	"name": "@cig-platform/microfrontend-helper",
 	"version": "0.0.1",
 	"description": "",
 	"main": "build/index.js",

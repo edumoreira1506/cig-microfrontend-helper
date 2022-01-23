@@ -1,1 +1,1 @@
-## @cig-platform/microfronend-helper
+## @cig-platform/microfrontend
