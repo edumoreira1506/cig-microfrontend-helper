@@ -6,6 +6,7 @@ export interface MicroFrontendProps {
   containerId: string;
   params: Record<string, string>;
   callbacks?: Record<string, () => void>;
+  data?: Record<string, any>;
 }
 
 export default function MicroFrontend({
@@ -13,14 +14,15 @@ export default function MicroFrontend({
   host,
   containerId,
   params,
-  callbacks
+  callbacks,
+  data,
 }: MicroFrontendProps) {
   useEffect(() => {
     const renderMicroFrontend = () => {
       const windowRender = (window as any)?.[`render${name}`]
 
       if (windowRender) {
-        windowRender(containerId, params, callbacks)
+        windowRender(containerId, params, callbacks, data)
       }
     }
 
@@ -41,7 +43,7 @@ export default function MicroFrontend({
     return () => {
       (window as any)[`unmount${name}`] && (window as any)[`unmount${name}`](`${name}-container`)
     }
-  }, [name, host, containerId, callbacks, params])
+  }, [name, host, containerId, callbacks, params, data])
 
   return <main id={`${name}-container`} />
 }
