@@ -6,7 +6,7 @@ export interface MicroFrontendProps {
   containerId: string;
   params: Record<string, string>;
   callbacks?: Record<string, () => void>;
-  data: Record<string, any>;
+  data?: Record<string, any>;
 }
 
 export default function MicroFrontend({
