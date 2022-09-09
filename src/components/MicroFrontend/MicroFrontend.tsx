@@ -4,7 +4,7 @@ export interface MicroFrontendProps {
   name: string;
   host: string;
   containerId: string;
-  params: Record<string, string>;
+  params: Record<string, string | boolean | number>;
   callbacks?: Record<string, () => void>;
   data?: Record<string, any>;
 }
