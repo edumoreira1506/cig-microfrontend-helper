@@ -1,15 +1,18 @@
 import React, { FC, useEffect } from 'react'
 
+type MicroFrontendParams  = {
+  linkComponent: FC<{
+    identifier: string;
+    params?: Record<string, string>
+  }>;
+  [key: string]: any
+}
+
 export interface MicroFrontendProps {
   name: string;
   host: string;
   containerId: string;
-  params: {
-    linkComponent?: FC<{
-      identifier: string;
-      params?: Record<string, string>
-    }> & Record<string, string | boolean | number>
-  };
+  params: MicroFrontendParams;
   callbacks?: Record<string, () => void>;
   data?: Record<string, any>;
 }
