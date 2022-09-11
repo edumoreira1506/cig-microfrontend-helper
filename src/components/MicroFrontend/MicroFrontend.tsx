@@ -8,8 +8,8 @@ export interface MicroFrontendProps {
     linkComponent?: FC<{
       identifier: string;
       params?: Record<string, string>
-    }>
-  } & Record<string, string | boolean | number>;
+    }> & Record<string, string | boolean | number>
+  };
   callbacks?: Record<string, () => void>;
   data?: Record<string, any>;
 }
